@@ -216,8 +216,8 @@ def load_data():
             "ML_Item_ID": item["id"],
             "Título": item["title"],
             "Precio Actual": item["price"],
-            "Precio Base": item.get("original_price", item["price"]),
             "% Descuento": f"{item.get('discount_pct', 0)}%" if item.get('discount_pct', 0) > 0 else "—",
+            "Precio Original": item.get('original_price') if item.get('discount_pct', 0) > 0 else "—",
             "Catálogo ML": "Sí" if item.get("catalog_product_id") else "No",
             "Método": source,
             "Competidores": analysis["comp_count"] if analysis else 0,
@@ -500,7 +500,7 @@ with sort_col2:
     pass  # placeholder for layout balance
 
 display_cols = [
-    "SKU", "Título", "Precio Actual", "Precio Base", "% Descuento", "Catálogo ML", "Método", 
+    "SKU", "Título", "Precio Actual", "Precio Original", "% Descuento", "Catálogo ML", "Método", 
     "Competidores", "Precio Mín", "Precio Máx", "Precio Prom",
     "Diff % vs Prom", "Posición", "Vendedor Más Barato", 
     "Precio Más Barato", "Link Competidor Más Barato",
@@ -594,8 +594,11 @@ if not df_filtered.empty:
     with col_item1:
         st.metric("💰 Precio Actual", f"${item_data['Precio Actual']}")
     with col_item2:
-        base_price = item_data.get('Precio Base', item_data['Precio Actual'])
-        st.metric("🏷️ Precio Base", f"${base_price}")
+        orig_price = item_data.get('Precio Original', '—')
+        if orig_price != '—':
+            st.metric("🏷️ Precio Original", f"${orig_price}")
+        else:
+            st.metric("🏷️ Precio Original", "Sin descuento")
     with col_item3:
         min_price = item_data['Precio Mín']
         st.metric("📉 Precio Mín Competencia", f"${min_price}" if pd.notna(min_price) else "N/A")
