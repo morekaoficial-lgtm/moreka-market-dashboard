@@ -1,0 +1,145 @@
+
+    /* ===== Global ===== */
+    .main { background-color: #f8fafc !important; }
+    
+    /* ===== Header ===== */
+    .main-header {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #0f172a;
+        margin-bottom: 0.3rem;
+        letter-spacing: -0.02em;
+    }
+    .sub-header {
+        font-size: 0.95rem;
+        color: #64748b;
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+    }
+    .header-bar {
+        background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+        border-radius: 12px;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        color: white;
+        box-shadow: 0 4px 20px rgba(37, 99, 235, 0.25);
+    }
+    .header-bar h1 {
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+    .header-bar p {
+        margin: 0.3rem 0 0 0;
+        opacity: 0.85;
+        font-size: 0.9rem;
+    }
+    
+    /* ===== Metric Cards ===== */
+    .metric-row {
+        display: flex;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    .metric-card {
+        background: white;
+        border-radius: 10px;
+        padding: 1.2rem;
+        text-align: center;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        flex: 1;
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .metric-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+    }
+    .metric-number {
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin-bottom: 0.2rem;
+    }
+    .metric-label {
+        font-size: 0.78rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+    
+    /* Position colors */
+    .pos-green .metric-number { color: #059669; }
+    .pos-green .metric-label { color: #047857; }
+    .pos-green { border-top: 3px solid #059669; }
+    
+    .pos-yellow .metric-number { color: #ca8a04; }
+    .pos-yellow .metric-label { color: #a16207; }
+    .pos-yellow { border-top: 3px solid #eab308; }
+    
+    .pos-gray .metric-number { color: #64748b; }
+    .pos-gray .metric-label { color: #475569; }
+    .pos-gray { border-top: 3px solid #94a3b8; }
+    
+    .pos-orange .metric-number { color: #ea580c; }
+    .pos-orange .metric-label { color: #c2410c; }
+    .pos-orange { border-top: 3px solid #f97316; }
+    
+    .pos-red .metric-number { color: #dc2626; }
+    .pos-red .metric-label { color: #b91c1c; }
+    .pos-red { border-top: 3px solid #ef4444; }
+    
+    /* ===== Section Headers ===== */
+    .section-header {
+        color: #1e3a8a;
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin: 1.5rem 0 0.8rem 0;
+        padding-bottom: 0.4rem;
+        border-bottom: 2px solid #e2e8f0;
+    }
+    
+    /* ===== Tables ===== */
+    .stDataFrame { font-size: 0.82rem; }
+    
+    /* ===== Sidebar ===== */
+    [data-testid="stSidebar"] {
+        background-color: #f1f5f9 !important;
+        border-right: 1px solid #e2e8f0;
+    }
+    [data-testid="stSidebar"] h2 {
+        color: #1e3a8a !important;
+    }
+    
+    /* ===== Links ===== */
+    a { color: #2563eb !important; text-decoration: none !important; }
+    a:hover { color: #1d4ed8 !important; text-decoration: underline !important; }
+    
+    /* ===== Competitor Detail Box ===== */
+    .competitor-box {
+        background: white;
+        border-radius: 12px;
+        padding: 1.2rem;
+        border: 1px solid #e2e8f0;
+        margin-bottom: 1rem;
+    }
+    .competitor-box h4 {
+        color: #1e3a8a;
+        margin: 0 0 0.5rem 0;
+        font-size: 0.95rem;
+    }
+    
+    /* ===== Footer ===== */
+    .footer {
+        text-align: center;
+        color: #94a3b8;
+        font-size: 0.78rem;
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #e2e8f0;
+    }
+    
+    /* ===== Scrollbar ===== */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
